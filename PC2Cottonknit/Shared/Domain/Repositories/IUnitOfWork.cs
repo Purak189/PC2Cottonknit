@@ -1,4 +1,4 @@
-namespace PC2Cottonknit.Shared.Domain.Repositories;
+namespace ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
 
 public interface IUnitOfWork
 {

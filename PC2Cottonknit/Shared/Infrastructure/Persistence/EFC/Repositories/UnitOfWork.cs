@@ -1,12 +1,14 @@
-using PC2Cottonknit.Shared.Domain.Repositories;
+using ACME.LearningCenterPlatform.API.Shared.Domain.Repositories;
+using ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
+using PC2Cottonknit.Shared.Infrastructure.Persistence.EFC.Configuration;
 
-namespace PC2Cottonknit.Shared.Infrastructure.Persistence.EFC.Repositories;
+namespace ACME.LearningCenterPlatform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
 public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext _context;
-    public Task CompleteAsync()
-    {
-        throw new NotImplementedException();
-    }
+
+    public UnitOfWork(AppDbContext context) => _context = context;
+
+    public async Task CompleteAsync() => await _context.SaveChangesAsync();
 }
