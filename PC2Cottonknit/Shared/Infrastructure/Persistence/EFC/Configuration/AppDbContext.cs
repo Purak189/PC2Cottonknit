@@ -39,7 +39,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             .IsRequired();
         builder.Entity<PurchaseOrder>().Property(po => po.quantity)
             .IsRequired();
-        builder.Entity<PurchaseOrder>().Property(po => po.resumerUrl)
+        builder.Entity<PurchaseOrder>().Property(po => po.resumeUrl)
             .IsRequired();
         
         
